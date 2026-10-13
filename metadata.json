@@ -1,0 +1,8 @@
+{
+  "name": "Asado Central PWA",
+  "description": "Catálogo interactivo y ritual del fuego para Asado Central.",
+  "requestFramePermissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

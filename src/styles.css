@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "tailwindcss";
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+  --color-brasa: #7dd3fc;
+  --color-carbon: #050505;
+}
+
+body {
+  background-color: var(--color-carbon);
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1.1); }
+  50% { opacity: 0.5; transform: scale(1.15); }
+}
+
+@keyframes ember-glow {
+  0%, 100% { opacity: 0.15; filter: blur(20px); }
+  50% { opacity: 0.35; filter: blur(40px); }
+}
+
+.animate-ember-glow {
+  animation: ember-glow 4s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 15s ease-in-out infinite alternate;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); text-shadow: -2px 0 #7dd3fc, 2px 0 #00fff9; }
+  20% { transform: translate(-2px, 2px); text-shadow: 2px 0 #7dd3fc, -2px 0 #00fff9; }
+  40% { transform: translate(-2px, -2px); text-shadow: -2px 0 #7dd3fc, 2px 0 #00fff9; }
+  60% { transform: translate(2px, 2px); text-shadow: 2px 0 #7dd3fc, -2px 0 #00fff9; }
+  80% { transform: translate(2px, -2px); text-shadow: -2px 0 #7dd3fc, 2px 0 #00fff9; }
+  100% { transform: translate(0); text-shadow: 2px 0 #7dd3fc, -2px 0 #00fff9; }
+}
+
+.animate-glitch {
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes smoke-rise {
+  0% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.burning-celeste {
+  background: linear-gradient(
+    to top,
+    #00fff9 0%,
+    #00d4ff 25%,
+    #00a2ff 50%,
+    #00d4ff 75%,
+    #00fff9 100%
+  );
+  background-size: 100% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: smoke-rise 3s linear infinite;
+  filter: drop-shadow(0 0 15px rgba(0, 255, 249, 0.5));
+  position: relative;
+}
+
+.burning-celeste::after {
+  content: "Coming Soon";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  color: rgba(0, 255, 249, 0.1);
+  filter: blur(10px);
+  animation: pulse-slow 2s ease-in-out infinite alternate;
+}
+
+@keyframes vibrate-expand {
+  0% { transform: scale(1.05) translate(0); }
+  20% { transform: scale(1.05) translate(-2px, 2px); }
+  40% { transform: scale(1.05) translate(-2px, -2px); }
+  60% { transform: scale(1.05) translate(2px, 2px); }
+  80% { transform: scale(1.05) translate(2px, -2px); }
+  100% { transform: scale(1.2) translate(0); }
+}
+
+.animate-vibrate-expand {
+  animation: vibrate-expand 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Custom Scrollbar for Menu Overlay */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #7dd3fc;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a5f3fc;
+}
